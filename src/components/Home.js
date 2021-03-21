@@ -108,10 +108,13 @@ const Content = styled.div`
 
 const LiveEvents = styled.div`
   display: flex;
+  overflow: auto;
+  white-space: nowrap;
 
   @media only screen and (max-width: 850px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+ 
+  }
 `;

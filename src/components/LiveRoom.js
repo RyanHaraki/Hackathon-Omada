@@ -122,6 +122,11 @@ const Viewer = styled.div`
   :hover {
     box-shadow: inset 0px 0px 30px 7px rgba(0, 0, 0, 0.44);
   }
+  @media only screen and (max-width: 850px) {
+   height: 100px;
+   margin-right: 8px;
+  }
+  
 `;
 
 const Main = styled.div`
@@ -157,6 +162,18 @@ const Main = styled.div`
       margin: 0;
       padding: 0;
     }
+
+    @media only screen and (max-width: 850px) {
+      display: flex;
+      height: 100px;
+
+      h4 {
+        display: none;       }
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    flex-direction: column;
   }
 `;
 

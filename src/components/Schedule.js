@@ -1,25 +1,27 @@
 import React from "react";
 import styled from "styled-components";
-import { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
+import { Calendar, momentLocalizer } from 'react-big-calendar';
+import moment from 'moment';
 
-const Schedule = () => {
-  const [date, setDate] = useState(new Date());
+class Calendar extends React.Component {
 
-  const onChange = (date) => setDate(date);
-
-  return (
-    <Container class="center">
-      <h1> Your Schedule </h1>
-      <div class="center">
-        <Calendar onChange={onChange} value={date} />
-      </div>
-    </Container>
-  );
-};
-
-export default Schedule;
+    render() {
+ 
+        return (
+ 
+            <Calendar
+ 
+                startAccessor="start"
+ 
+                endAccessor="end"
+ 
+            />
+ 
+        )
+ 
+    }
+ }
+ export default Calendar;
 
 const Container = styled.div`
   h1 {

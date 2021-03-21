@@ -31,6 +31,17 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 40px;
+
+  @media only screen and (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .trainer-image {
+      width: 50%;
+    }
+
+}
   
   h2 {
     color: black;
