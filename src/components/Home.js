@@ -18,7 +18,13 @@ const Home = ({ user }) => {
         <Link to="/live">
           <LiveEvent />
         </Link>
-        <h1>Browse Workouts</h1>
+
+        <h1>
+          Browse Workouts 
+          <Link to="/workout">
+            <span class="plus"> +</span>
+          </Link>
+        </h1>
         <LiveEvents>
           <Event
             img="https://images.unsplash.com/photo-1567598508481-65985588e295?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
@@ -31,17 +37,22 @@ const Home = ({ user }) => {
             time="30 mins - Medium"
           />
           <Event
-          img="https://images.unsplash.com/photo-1588286840104-8957b019727f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" 
-          title="Partner Stretching"
-          time="45 mins - Easy"
-              />
+            img="https://images.unsplash.com/photo-1588286840104-8957b019727f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80"
+            title="Partner Stretching"
+            time="45 mins - Easy"
+          />
         </LiveEvents>
-        <h1>Upcoming Events</h1>
+        <h1>
+          Upcoming Events
+          <Link to="/schedule">
+            <span class="plus"> +</span>
+          </Link>
+        </h1>
         <LiveEvents>
           <UpcomingEvent
             day="Mar"
             date="20"
-            name="20 Minute Bodyweight Workout!"
+            name="20 Minute Workout!"
             time="8:00am - 8:20am"
             image="https://www.popsci.com/resizer/E27KWkS0mUi26C9XASUM56enaSk=/760x506/arc-anglerfish-arc2-prod-bonnier.s3.amazonaws.com/public/7BRTDJOXCIQQH4ZMCBFIUDLEZQ.jpg"
           />
@@ -81,12 +92,18 @@ const Container = styled.div`
     text-decoration: none;
   }
 
-  @media only screen and (max-width: 850px) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
+  .plus {
+    color: grey;
+    font-weight: 400;
+    cursor: pointer;
   }
-  `;
+
+  @media only screen and (max-width: 850px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const Content = styled.div`
   padding: 0 4%;
@@ -98,12 +115,12 @@ const Content = styled.div`
   span {
     font-size: 1.8rem;
   }
-  
+
   @media only screen and (max-width: 850px) {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+  }
 `;
 
 const LiveEvents = styled.div`
@@ -115,6 +132,5 @@ const LiveEvents = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
- 
   }
 `;

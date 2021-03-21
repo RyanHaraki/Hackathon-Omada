@@ -1,13 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 const Event = ({ img, time, title }) => {
 
   return (
     <Container>
+      <Link to='/book'>
       <div style={{ backgroundImage: `url(${img})` }}></div>
       <h3>{title}</h3>
       <p>{time}</p>
+      </Link>
     </Container>
   );
 };
@@ -19,6 +22,11 @@ const Container = styled.div`
   cursor: pointer;
   padding: 10px;
   border-radius: 10px;
+
+  a {
+  color: black;
+  text-decoration: none;
+  }
 
   div {
     width: 280px;

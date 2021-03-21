@@ -1,27 +1,21 @@
+import { Calender, momentLocalizer } from 'react-big-calendar'
+import moment from 'moment'
 import React from "react";
 import styled from "styled-components";
-import { Calendar, momentLocalizer } from 'react-big-calendar';
-import moment from 'moment';
 
-class Calendar extends React.Component {
+const localizer = momentLocalizer(moment);
 
-    render() {
- 
-        return (
- 
-            <Calendar
- 
-                startAccessor="start"
- 
-                endAccessor="end"
- 
-            />
- 
-        )
- 
-    }
- }
- export default Calendar;
+const MyCalendar = props => (
+  <div>
+    <Calender
+      localizer={localizer}
+      events={myEventsList}
+      startAccessor="start"
+      endAccessor="end"
+      style={{ height: 500 }}
+    />
+  </div>
+)
 
 const Container = styled.div`
   h1 {
@@ -43,3 +37,4 @@ const Container = styled.div`
         width: 600px;   
   }
 `;
+

@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { createGlobalStyle } from 'styled-components';
 
 const Header = ({ user, signOut }) => {
   return (
@@ -10,22 +11,26 @@ const Header = ({ user, signOut }) => {
           <h1>OMADA</h1>
         </Link>
         <left>
-          <Link to="/schedule">
-            <p>Schedule</p>
-          </Link>
+        <Link to="/workout">
+            <p>Workouts</p>
+            </Link>
           <Link to="/trainers">
             <p>Trainers</p>
+          </Link>
+          <Link to="/schedule">
+            <p>Schedule</p>
           </Link>
           <Link onClick={signOut}>
             <p>Sign Out</p>
           </Link>
-          <img
+          <Link to="/profile"> <img
             src={
               !user.profileImage
                 ? "https://i.pinimg.com/originals/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg"
                 : user.profileImage
             }
-          />
+          /></Link>
+         
         </left>
       </header>
     </Container>

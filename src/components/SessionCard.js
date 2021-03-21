@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const TrainerCard = ({ title, image, bio }) => {
+const SessionCard = ({ title, image, bio, time }) => {
   return (
     <Container>
       <div
@@ -12,16 +12,16 @@ const TrainerCard = ({ title, image, bio }) => {
       <trainerInfo className="mainInfo">
         <h2>{title}</h2>
         <p>{bio}</p>
-
+        <p>{time}</p>
         <Link to="/book">
-          <h6>Book</h6>
+          <h6>Select</h6>
         </Link>
       </trainerInfo>
     </Container>
   );
 };
 
-export default TrainerCard;
+export default SessionCard;
 
 const Container = styled.div`
   color: black;
@@ -60,19 +60,16 @@ const Container = styled.div`
   h6 {
     border-radius: 15px;
     border: black;
-     height: 2rem;
+    padding: 10px 0;
     width: 11rem;
-    justify-content: center;
-    align-items: center;
-      background-color: #FDC500;
-      color: black;
-      font-size: 20px;
+    background-color: #00509D;
+    color: white;
+    font-size: 20px;
     text-align: center;
     font-weight: 750;
     transition: all 0.4s;
     cursor: pointer;
     text-decoration: none;
-    padding-top: 3px;
     margin-left: 20px;
     
     :hover {

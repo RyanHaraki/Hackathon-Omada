@@ -1,25 +1,28 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 const UpcomingEvent = ({ day, date, name, time, image }) => {
   return (
     <Container>
-      <div
-        className="top"
-        style={{
-          backgroundImage: `url(${image})`,
-        }}
-      >
-        <div className="date">
-          <p>{day} </p>
-          <span>{date}</span>
+      <Link to="/schedule">
+        <div
+          className="top"
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <div className="date">
+            <p>{day} </p>
+            <span>{date}</span>
+          </div>
         </div>
-      </div>
-      <div className="bottom">
-        <h4>{name}</h4>
-        <p>{time}</p>
-        <button>Register</button>
-      </div>
+        <div className="bottom">
+          <h4>{name}</h4>
+          <p>{time}</p>
+          <button>Register</button>
+        </div>
+      </Link>
     </Container>
   );
 };
@@ -35,6 +38,11 @@ const Container = styled.div`
   cursor: pointer;
   padding: 5px;
   margin-right: 40px;
+
+  a {
+    text-decoration: none;
+    color: black; 
+  }
 
   :hover {
     background: #ededed;
