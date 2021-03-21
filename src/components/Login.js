@@ -4,37 +4,36 @@ import LoginCard from "./LoginCard";
 import { auth, provider } from "../firebase";
 
 const Login = (props) => {
- 
-     const signIn = () => {
-      auth
+  const signIn = () => {
+    auth
       .signInWithPopup(provider)
       .then((result) => {
+        console.log(result)
         const newUser = {
           name: result.user.displayName,
           email: result.user.email,
-          profileImage: result.user.picture,
+          profileImage: result.user.photoURL,
         };
         localStorage.setItem("user", JSON.stringify(newUser));
         props.setUser(newUser);
         // addUser(newUser.name, newUser.email, newUser.profileImage)
       })
       .catch((err) => alert(err.message));
-     };
-
-    return (
-      <Container>
-        <div className="header">
-          <h1>Omada</h1>
-        </div>
-
-        <CardArea>
-          <LoginCard title="Personal" signIn={signIn}  />
-          <LoginCard title="Teams" signIn={signIn}/>
-        </CardArea>
-      </Container>
-    );
   };
 
+  return (
+    <Container>
+      <div className="header">
+        <h1>OMADA</h1>
+      </div>
+
+      <CardArea>
+        <LoginCard title="Personal" signIn={signIn} />
+        <LoginCard title="Teams" signIn={signIn} />
+      </CardArea>
+    </Container>
+  );
+};
 
 export default Login;
 

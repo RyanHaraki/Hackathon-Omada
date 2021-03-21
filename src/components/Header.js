@@ -6,16 +6,20 @@ const Header = ({ user, signOut }) => {
   return (
     <Container>
       <header>
-        <h1>Omada</h1>
+        <Link to="/">
+          <h1>OMADA</h1>
+        </Link>
         <left>
-          <Link to="#">
+          <Link to="/schedule">
             <p>Schedule</p>
           </Link>
-          <Link to="#">
+          <Link to="/trainers">
             <p>Trainers</p>
           </Link>
+          <Link onClick={signOut}>
+            <p>Sign Out</p>
+          </Link>
           <img
-            onClick={signOut}
             src={
               !user.profileImage
                 ? "https://i.pinimg.com/originals/1c/c5/35/1cc535901e32f18db87fa5e340a18aff.jpg"

@@ -3,8 +3,6 @@ import styled from "styled-components";
 
 const Event = ({ img, time, title }) => {
 
-
-
   return (
     <Container>
       <div style={{ backgroundImage: `url(${img})` }}></div>
@@ -42,6 +40,6 @@ const Container = styled.div`
   }
 
   :hover {
-    background: #f7f7f7;
+    background: #ededed;
   }
 `;
